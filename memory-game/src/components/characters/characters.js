@@ -1,16 +1,16 @@
 import React from "react";
-import "./characters.css";
+import "./Characters.css";
 
-const CharacterCard = () => (
+const CharacterCard = props => (
   <div className="card">
-    <div className="img-container">
-      <img alt={props.name} src={props.image} />
-    </div>
-    <div className="content">
-      <h3>
-        {props.name}
-      </h3>
-    </div>
+    <a onClick={() => props.isClicked(props.name)}>
+      <div className="img-container">
+        <img alt={props.name} src={props.image} />
+      </div>
+      <div className="content">
+        <h3>{props.name}</h3>
+      </div>
+    </a>
   </div>
 );
 
