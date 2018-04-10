@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import CharacterCard from './components/Characters'
-import characters from './characters.json'
-import Wrapper from './components/Wrapper'
+import CharacterCard from './components/Characters';
+import characters from './characters.json';
+import Wrapper from './components/Wrapper';
+import Header from './components/Header';
 
 class App extends Component {
 
@@ -12,6 +12,13 @@ class App extends Component {
     topScore: 0,
     cards: characters,
     unclicked: characters
+}
+
+randomize = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
   isClicked = name => {
@@ -26,11 +33,22 @@ class App extends Component {
         unclicked: characters
 
       })
+    } 
+    else {
+      const filterCharacters = this.state.unclicked.filter(char => char.name !== name);
+
+      this.setState({
+        newScore: this.setState.newScore ++,
+        cards: characters,
+        unclicked: filterCharacters
+      })
     }
+    this.randomize(characters);
   }
   render() {
     return (
       <Wrapper>
+      {/* <Header/> */}
         {
           this.state.cards.map(char => {
               return <CharacterCard 

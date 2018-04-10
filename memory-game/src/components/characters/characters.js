@@ -6,10 +6,10 @@ const CharacterCard = props => (
     <a onClick={() => props.isClicked(props.name)}>
       <div className="img-container">
         <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
         <h3>{props.name}</h3>
       </div>
+      {/* <div className="content">
+      </div> */}
     </a>
   </div>
 );

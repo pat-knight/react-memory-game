@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  @media all and (max-width: 600px) {
+  
+    .container {
+      flex-wrap: wrap;
+    }
+    
+    .container > li {
+      flex-basis: 50%;
+    }
+  }
