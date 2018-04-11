@@ -8,8 +8,6 @@ const CharacterCard = props => (
         <img alt={props.name} src={props.image} />
         <h3>{props.name}</h3>
       </div>
-      {/* <div className="content">
-      </div> */}
     </a>
   </div>
 );

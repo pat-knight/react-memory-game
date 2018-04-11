@@ -3,14 +3,12 @@ import './Header.css';
 
 const Header = props => (
 	<div>
-		<nav>
+		<nav className='navbar'>
 			<ul className="container">
-				<li>Home</li>
-				<li>Profile</li>
-				<li className="search">
-					<input type="text" className="search-input" placeholder="Search" />
-				</li>
-				<li>Logout</li>
+				<li>Simpson's Memory Test</li>
+				<li>Github</li>
+				<li>Score: {props.newScore}</li>
+				<li>High Score: {props.topScore}</li>
 			</ul>
 		</nav>
 	</div>

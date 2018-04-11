@@ -14,6 +14,8 @@ class App extends Component {
     unclicked: characters
 }
 
+
+// try this sort(function(a, b){return 0.5 - Math.random()})
 randomize = array => {
   for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -38,7 +40,7 @@ randomize = array => {
       const filterCharacters = this.state.unclicked.filter(char => char.name !== name);
 
       this.setState({
-        newScore: this.setState.newScore ++,
+        newScore: this.state.newScore + 1,
         cards: characters,
         unclicked: filterCharacters
       })
@@ -47,8 +49,11 @@ randomize = array => {
   }
   render() {
     return (
+      <div>
+      <Header
+        newScore={this.state.newScore}
+        topScore={this.state.topScore}/>
       <Wrapper>
-      {/* <Header/> */}
         {
           this.state.cards.map(char => {
               return <CharacterCard 
@@ -61,6 +66,7 @@ randomize = array => {
           })
         }
       </Wrapper>
+      </div>
     );
   }
 }
